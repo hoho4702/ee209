@@ -1,0 +1,35 @@
+# Variables
+STUDENT_ID := $(shell cat STUDENT_ID)
+SUBMIT_DIR := $(STUDENT_ID)_assign5
+SUBMIT_FILES := *.c *.h Makefile readme EthicsOath.pdf
+SUBMIT := $(STUDENT_ID)_assign5.tar.gz
+
+TARGET = ish
+SRCS = $(wildcard *.c)
+OBJS = $(patsubst %.c, %.o, $(SRCS))
+CC = gcc209
+CFLAGS = -Wall -g -MMD -MP -D_POSIX_C_SOURCE=200112L -D_GNU_SOURCE  
+
+# Rules
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+submit:
+	mkdir -p $(SUBMIT_DIR)
+	cp $(SUBMIT_FILES) $(SUBMIT_DIR)
+	tar zcf ./$(SUBMIT) $(SUBMIT_DIR)
+	rm -rf $(SUBMIT_DIR)
+
+clean:
+	rm -rf $(TARGET) *.o *.d
+
+# Include dependencies
+-include $(OBJS:.o=.d)
+
+# Special Targets
+.PHONY: all clean submit

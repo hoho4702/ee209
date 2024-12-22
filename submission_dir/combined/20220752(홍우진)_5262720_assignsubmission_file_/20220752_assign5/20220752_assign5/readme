@@ -1,0 +1,9 @@
+assignment5
+20220752 Hong Woojin
+
+I did this assignment alone
+I used a lecture note and classsum Q&As as references
+I spend 20 hours
+
+There is no #define _GNU_SOURCE in ish.c
+so this should be compiled by may Makefile

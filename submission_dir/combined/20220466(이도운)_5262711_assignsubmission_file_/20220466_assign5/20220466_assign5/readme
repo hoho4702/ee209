@@ -1,0 +1,41 @@
+# Assignment #5: A Unix Shell
+
+## Author Information
+- Name: 이도운
+- Student ID: 20220466
+
+## Work Hours
+Approximately 30 hours were spent on this assignment, including:
+- Initial design and planning: 10 hours
+- Implementation: 10 hours
+- Debugging and testing: 8 hours
+- Documentation: 2 hours
+
+## External Help & Collaboration
+- No external help was received for this assignment
+- No collaboration with other students
+
+## Assessment
+### Strengths of the Assignment
+- Provided good practice with Unix processes and system calls
+- Helped understand the inner workings of a shell
+- Improved understanding of file descriptors and I/O redirection
+- Enhanced skills in signal handling and process management
+
+## Additional Notes for Graders
+- Used the provided DynArray ADT for token management
+- Implemented all required functionality including:
+  * Basic command execution
+  * Built-in commands (cd, setenv, unsetenv, exit)
+  * Signal handling (Ctrl-C, Ctrl-\)
+  * I/O redirection
+  * Pipeline implementation
+  * .ishrc file processing
+- Thoroughly tested with the provided sampleish program
+- Followed all style guidelines and coding conventions
+
+## Testing Strategy
+- Used the provided test cases
+- Created additional test cases for edge conditions
+- Verified behavior against sampleish reference implementation
+- Used gdb for debugging when necessary

@@ -1,0 +1,21 @@
+1.
+20240242 Jeonghyun Ryu, 20240194 Kim Chaehwan
+
+2.
+20240194 Kim Chaehwan
+- Process Handling, Redirection, Process Handling, Shellhelper() function,
+20240242 Jeonghyun Ryu
+- Initialization and Termination, Lexical Analysis, Syntactic Analysis, Memory Management, Pipe Implementation
+- Together : Error Handling
+
+3.
+X
+
+*-----------------------------------------------------------------------------------------*
+We failed the final test case. Therefore, we analyzed our code, assuming that the issue might be in the Initialization section. However, upon analyzing test.py, we discovered that the Root/.ishrc refers to the directory where the Python file is located, and test.py copies the .ishrc file, for example, to mnt/home/20240194/assignment5/tools/.ishrc.
+
+According to the EE209 document, the .ishrc file should be located in the Home directory, which corresponds to mnt/home/20240194. Therefore, our code was written to read from mnt/home/20240194/.ishrc. However, since the .ishrc file was actually located in the tools folder where test.py resides, the file could not be read, leading to a failure.
+
+We also verified that the sampleish behaves exactly the same as our code and fails the test case when run through test.py. On the other hand, when the .ishrc file is stored in the Home directory, both our code and the sampleish pass the test case and behave identically.
+
+Therefore, while test.py determines this as a failure, we believe our implementation is correct.

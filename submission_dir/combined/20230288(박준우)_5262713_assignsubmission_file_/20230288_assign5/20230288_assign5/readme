@@ -1,0 +1,41 @@
+20230288 박준우 (Worked alnoe)
+
+1. I referred the code from text book. (Ch8)
+Especially for the followings:
+    - Shell code structure
+    - Signal handling
+    - Wrapper functions
+
+2. I spent more than 20 hours.
+
+3. This assignment may be too heavy for the persone who does shell lab first time.
+
+4. Explain the what I made:
+    4-1. I made job.h, job.c and wrapper.h, wrapper.c.
+    4-2. I revised checkBG() in util.c
+        because after syntaxcheck(), we can ensure that & can exist only at the last token.
+    4-3. I implemented ish.c. I can explain it in 3 big parts:
+        - built-in command
+        - pipeline with normal command
+        - signal handling
+
+        4-3-1. built-in command
+            - understand the following functions and handled errors
+                setenv(), unsetenv(), chdir()
+
+        4-3-2. pipeline with normal command 
+            - Note that one command line has n commands with n-1 pipelines.
+            - Divide one command line in n commands by getArgv()
+            - set pipes and redirect by dup2() and then fork(). Do this n times
+        
+        4-3-3. signal handling
+            - sigchld_handler and waitfg
+                sigchld_hanlder reaps all children terminated that time.
+                waitfg(pid) checks if the wanted child terminated.
+                    If not, then waitfg waits for the child terminated by sigsuspend()
+                    Don't use Sigsuspend (wrapper for sigsuspend), which doesn't ensure the atomicity.
+                (In 4-3-2, you did n forks, so you should waitpid for n times also)
+            
+            - sigquit_handler and sigalrm_handler
+                uses alarm() and sigquit_flag. 
+                (volatile sig_atomic_t sigquit_flag)

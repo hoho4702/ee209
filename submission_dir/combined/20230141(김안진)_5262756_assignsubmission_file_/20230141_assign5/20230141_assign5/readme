@@ -1,0 +1,15 @@
+# Assignment 5: A Unix Shell
+
+## Student Information
+- Name: 김안진
+- Student ID: 20230141
+
+## Description
+This project implements a Unix shell with basic functionalities including built-in commands, external commands execution, redirection, and piping.
+
+## Testing
+Run the provided test script using `./tools/test.py`.
+
+## Submission
+This file is part of the submission for EE209 Assignment 5.
+

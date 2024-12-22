@@ -1,0 +1,8 @@
+백진영 20240344 assign2
+프로젝트 이름: str & sgrep
+프로젝트 설명: c언어를 활용하여 string.h를 구현하고, simple grep을 구현하는 활동이다.
+설치방법: vs code를 이용하여, gcc compiler로 컴파일하였다.
+사용법: vs 코드를 통해서 c 프로그램을 진행한다. 
+예시:  StrGetLength(s) //s[]='abc', 함수의 이용 
+	output:3
+파일 설명: 리드미, DFA, 윤리서약서, wordcount프로그램(c)

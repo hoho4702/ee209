@@ -1,0 +1,19 @@
+Work Division
+I yehwanJin 20210629
+    - Make Makefile
+    - Prgrammed
+        Generate Child Process and simple excute command
+        Builtin Command (cd, exit, setenv, unsetenv)
+        Signal Handling (SIGINT, SIGQUIT)
+        pipeline
+
+My Partner 20230523 Yeonjun Lee
+    - Prgrammed
+        Function makecommand
+        Mange Back Ground Process with Signal Hnadling
+        Redirection
+        
+time spent: 22hours
+
+pipeline implementation was hard to find out that other file(fd_temp) was needed.
+        

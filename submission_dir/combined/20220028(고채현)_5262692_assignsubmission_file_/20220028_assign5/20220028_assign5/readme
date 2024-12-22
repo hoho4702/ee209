@@ -1,0 +1,20 @@
+[Name, Student ID]
+    : [ChaeHyeon Go, 20220028], [Kyuwon Lee, 20230478]
+
+[Assignment number]: 5
+
+[Description of work division in team]
+    1. ChaeHyeon Go's task
+    - Implement following functions
+        - handleSIGINT, handleSIGQUIT, handleSIGALRM,
+        installSignalHandlers, readIshrc
+    - error message executing, specific errorcase handling
+
+    2. Kyuwon Lee's task
+    - Implement following functions
+        - freeTokens, parseCommand, executeSingleCommand, 
+        executePipeline, shellHelper, main
+    - Make 'Makefile', specific errorcase handling
+
+[Description of whatever help received from others]
+    : Nothing

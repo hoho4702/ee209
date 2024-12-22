@@ -1,0 +1,15 @@
+20230775 최원서
+
+I worked on this project alone.
+
+# Known Bugs
+There is a small bug/unexpected behavior in both my implementation and the sample implementation, `sampleish`.
+It is possible for a child process to be orphaned,
+when the shell exits early due to an error shuch as `fork()` failing.
+
+I have confirmed that this behavior exists for `sampleish` using the folling method.
+1) $ systemd-run --user --collect --pty -p TasksMax=3 /bin/sh
+2) $ ./sampleish
+3) % sleep 100 | ls
+4) The shell exits with a resource temporarily  unavailable error.
+5) On a different terminal, run `htop` to confirm a `sleep` process exists.

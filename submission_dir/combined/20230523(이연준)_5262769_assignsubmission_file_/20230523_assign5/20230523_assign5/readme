@@ -1,0 +1,115 @@
+Assignment 5
+Name : Yeonjun Lee
+student ID : 20230523
+
+Partner Info
+Name : 진예환
+student ID : 20210629
+
+Work Division (We did this assignment by our selves)
+I
+    - Make Makefile
+    - Prgrammed
+        Generate Child Process and simple excute command
+        Function makecommand
+        Mange Back Ground Process with Signal Hnadling
+        Redirection
+
+My Partner
+    - Prgrammed
+        Generate Child Process and simple excute command
+        Builtin Command (cd, exit, setenv, unsetenv)
+        Signal Handling (SIGINT, SIGQUIT)
+
+Time Line
+- 2024.11.01
+    Team made
+- 2024.12.08
+    First meating : Planing for assignment
+- ~ 2024.12.10
+    Understanding given codes and make Makefile
+- 2024.12.10
+    Second meating : Understanding given codes and make Makefile
+- 2024.12.18
+    I
+    1. Change makecommand function
+        Before : dynamically allocate the array to store the pointer
+            of each command token string
+        Problem : Unknown error occurs during allocate the array
+
+        Solve (After) : make local pointer array to store
+            the pointer of each command token string,
+            and pass it to makecommand function.
+            In makecommand function, just modify passed array.
+    
+    2. Add Background process Management
+- 2024.12.19 ~ 2024.12.20
+    Third meating
+        I
+        1. Solve Problem in Background Process Management
+            Problem
+            : When two background process exist,
+                after the first background process is terminated,
+                the shell doesn't executed to user
+                before second background process is terminated.
+
+            Solve
+            : Iterate background process linked list,
+                and check those processes are terminated or not.
+            If one background process is found to be terminated,
+                then after manage for termination,
+                and just return the SIGCHLD signal handler.
+            If no background process is terminated,
+                then just return the SIGCHLD signal handler
+        
+        2. Add Redirection
+            Divide 4 cases for redirection, and manage the redirection
+            1) No Redireciton exists
+            2) Only Redirection out exists
+            3) Only Redirection in exists
+            4) Both Redirection out and in exist
+        
+        3. Help my partner to complete
+            1) `cd` command
+                I added the parameter cheking logic to handle edge cases
+                such as invalid no parameter (ex. `cd &`)
+                and more than 2 parameters (ex. `cd a b`)
+            2) Signal handling (SIGQUIT)
+                Problem
+                : When user typed Ctrl-\,
+                    after 5 seconds first Ctrl-\ typing,
+                    the ish program terminated
+
+                Solve
+                : Change static local variable(type_count) to global.
+                And then add the reset logic in the SIGALRM handler
+                to reset waiting for second Ctrl-\ input for 5 second
+                after first Ctrl-\ typed
+
+        My Partner
+        1. Add Builtin Command Management
+            My partner programmed to execute below builtin commands.
+            1) cd 2) exit 3) setenv 4) unsetenv
+        
+        2. Add signal handling (SIGINT, SIGQUIT)
+            My partner programmed to handle signals (SIGINT, SIGQUIT).
+- 2024.12.20
+    Add Comment to all files
+- 2024.12.20 ~ 2024.12.22
+    My Partner tried to implement the pipe. (Main Structure)
+- 2024.12.22
+    I editted the implement of the pipe programmed by my partner
+    1) When generate each command in pipes,
+        I make each command by adding new variable
+        to store next pipe line index
+        Then, I executed result command.
+    2) I modified the process of storing the index of pipes
+        by passing the locally defined result index array,
+        and check the current token is pipe or not
+            by checking the eType in Token structure
+    
+    +) My partner found edge cases
+        When setenv and unsetenv with no arguments,
+        our ish doesn't print any error message
+    => I add argument checking process to print the error message
+        to above edge cases

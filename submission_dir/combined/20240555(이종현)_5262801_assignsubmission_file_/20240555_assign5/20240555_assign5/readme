@@ -1,0 +1,38 @@
+# EE209 Assignment 5: A Unix Shell
+
+Author: 이종현 (Jonghyeon Lee, 20240555)
+
+## Submission Description
+
+본 과제의 submission file에는 아래 파일들이 포함되어 있습니다:
+
+`ish.c, dynarray.c, dynarray.h, lexsyn.c, lexsyn.h, token.c, token.h, util.c, util.h, Makefile, readme (THIS FILE), EthicsOath.pdf`
+
+ish.c 파일의 경우:
+코드에는 필요한 주석이 작성되어 있으며,
+각 줄은 가독성을 위해 70자로 제한하였습니다.
+
+ish.c 파일을 제외한 파일들의 경우:
+skeleton code와 함께 제공된 상태에서 수정 없이 사용하였습니다.
+
+## About Collaboration
+
+코드 작성 과정에서 타인과의 어떠한 논의도 하지 않았으며,
+코드 공유 혹은 타인의 코드 사용은 일체 없었습니다.
+
+## Extra Credit Option
+
+Implemented PIPE operation. (in ish.c)
+Worked on assignment without partner.
+
+## Comment
+
+이메일을 통해 문의한 ./sampleish 오류 관련하여,
+(Sent: 2024-12-20 (금) 14:50:07 (UTC+09:00), [EE209] Assignment 5 sampleish 관련 문의)
+.ishrc parsing 과정에서 만들어진 child process에서 file descriptor가 제대로 close되지
+못한 것으로 추정되어 본 제출에서는 해당 부분 보완하였습니다.
+
+fg, alias, & 등의 token은 command가 아닌 normal token으로 처리하였습니다.
+
+PIPE 처리 과정에서 중간에 non-zero exit이 일어난 프로그램이 있더라도
+다음 프로그램을 호출하고 stdout을 redirect하도록 하였습니다. (./sampleish behavior 참고)

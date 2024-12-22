@@ -1,0 +1,14 @@
+Assignment 5: Unix Shell Implementation
+Name: SeungJu Back
+Student ID: 20200297
+
+Work done independently.
+
+Time spent: Approximately 20 hours
+
+Known issues:
+- None identified at this time
+
+Additional notes:
+- Implemented all basic requirements including signal handling
+- Added extra error checking for file operations

@@ -1,0 +1,5 @@
+윤가온 20240465
+김기홍 20240064
+
+김기홍: basic_test00, exit_test00, lex_test07, simple_test00, simple_test06, simple_test14 testcase 해결 관련 함수 작성
+윤가온: cd_test00, pipe_test02, pipe_test08, pipe_test09, pipe_test12, redirection_test06, redirection_test09, setenv_test00, unsetenv_test00 해결 관련 함수 작성

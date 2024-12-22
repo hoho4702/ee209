@@ -1,0 +1,17 @@
+Assignment 5 : Unix Shell
+20230436 우현호
+I refered to websites and lecture note to study io management, 
+process management(fork, execvp,...), signal.
+
+Time spent : ~ 20 hrs
+Known Bugs : 
+- I didn't implement pipe handling
+- Result and expected outputs differ due to the position 
+of the % prefix when commands from .ishrc are printed.
+
+Description : Used provided Dynamic Array ADT.
+Modular design with functions such as execute_command for handling commands and redirections, and shellHelper for parsing and executing user input or commands
+from .ishrc. 
+Key techniques : Dynamic tokenization (lexLine and syntaxCheck) to
+parse user input, process forking (fork) to execute commands.
+Signal handling (SIGQUIT, SIGALRM) to manage shell-specific behaviors like quit prompts.

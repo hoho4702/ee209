@@ -1,0 +1,9 @@
+name : Kim Yeongung(±è¿µ¿õ)
+student ID : 20210125
+
+I spent 18 hours to do this assignment(alone).
+Actually, I don't fully understand about how can I change Makefile to make my own Makefile. 
+I am not taking class EE485, So I read https://makefiletutorial.com/ carefully.
+I use gcc209, and -D_DEFAULT_SOURCE, -D_GNU_SOURCE options. 
+But I didn't modify Makefile much.
+

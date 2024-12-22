@@ -1,0 +1,31 @@
+# Assignment 5: A Unix Shell
+
+name: Jihwan Lee
+student ID : 20140458
+
+[helped reference]
+
+1.  using of setenv, unsetenv (https://bubble-dev.tistory.com/entry/CC-setenv3-unsetenv3)
+2.  using of chdir (https://shaeod.tistory.com/325)
+3.  using stdin change (https://kldp.org/node/154861)
+
+- not need => using fflush(NULL);
+
+4.  Lecture Note
+5.  sampleish -> it was very helpful
+
+[spent time]
+20 hours
+
+[assessment]
+It was useful experience to implement very basic shell.
+I didn't apply alias, fg and redirection.
+It is too challengable to me, but other function implementing gave me insights of shell system.
+I realized that terminal is one of Shell and I can make custom terminals.
+
+[others]
+
+1. "execvp"
+
+- When I was implementing ", it didn't work. Variable args are filled with empty value. I wanted to use DynArray_toArray function, but the array was not changed well. So I just use indexing.
+- I omitted last value of variable args null. At first running time, it works well. But after some operations, the last value of args filled with garbage value. So I initialize it as NULL.

@@ -1,0 +1,10 @@
+20220439 Yoo Juyoung
+readme file for Assignment 5
+
+- I did this assignment by myself.
+- I referred to the signal handling methods learned in the signal lecture. 
+- I searched online for the usage of built-in functions related to the 
+`cd`, `setenv`, and `unsetenv` commands and utilized them. I noted that 
+the `setenv` and `unsetenv` commands cannot accept more than one or two 
+arguments, respectively, and added error messages to reflect this.
+- I spent about 3 days.
